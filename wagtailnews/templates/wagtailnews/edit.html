@@ -40,7 +40,9 @@
 {% endblock %}
 
 {% block extra_css %}
+    {{ block.super }}
     {% include "wagtailadmin/pages/_editor_css.html" %}
+    {{ edit_handler.form.media.css }}
     <style>
         .dropdown-separator {
             border: 0 none;
@@ -52,7 +54,9 @@
     </style>
 {% endblock %}
 {% block extra_js %}
+    {{ block.super }}
     {% include "wagtailadmin/pages/_editor_js.html" %}
+    {{ edit_handler.form.media.js }}
     {% if do_preview %}
     <script>
     $(function() {
